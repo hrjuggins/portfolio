@@ -13,14 +13,14 @@ body {
 .container {
   width: 100vw;
   background: white;
-  position: absolute;
-  transition: 1s ease;
-  left: 0;
-  box-shadow: -1px -2px 20px 0px #00000059;
+  // position: absolute;
+  // transition: 1s ease;
+  // left: 0;
+  // box-shadow: -1px -2px 20px 0px #00000059;
 }
 
 .left {
-  left: 300px;
+  left: 225px;
 }
 .fixed {
   position: fixed;
@@ -63,7 +63,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,24 +72,51 @@ body {
   font-family: 'Cinzel', sans-serif;
   color: $blue;
   font-size: 1em;
-  .designer {
-    color: $orange;
+  #designer {
+    color: white;
   }
 }
 
+#designerdiv {
+  width: 1px;
+  height: 35px;
+  background: $orange;
+  position: relative;
+  transform-origin: left;
+  display: inline-block;
+  top: 12px;
+}
+
+.divanimate1 {
+  transform: scaleX(160);
+}
+
+.divanimate2 {
+  transform: scaleX(0);
+}
+.divanimate3 {
+  transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 #side-menu {
-  width: 500px;
+  width: 225px;
   height: 100vh;
   background: $orange;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: -500px;
+  left: 0;
   z-index: -2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding-top: 100px;
 }
 
 
 .projects {
   padding: 25px;
+  cursor: pointer;
   a {
     z-index: 9;
     text-decoration: none;
@@ -115,15 +142,14 @@ body {
     }
   }
   .project {
-    margin: auto;
+    margin: 0 auto 60px;
     width: 80vw;
     height: 70vh;
-    margin-bottom: 45px;
     padding: 10px;
     .image {
       height: 85%;
       background-size: cover;
-      background-position: center;
+      background-position: center top;
       background-repeat: no-repeat;
       display: flex;
       align-items: flex-end;
@@ -164,7 +190,17 @@ body {
       background-image: url('../images/three.png');
     }
     .four {
-      background-image: url('../image/four.png');
+      background-image: url('../images/four.png');
+    }
+    .five {
+      background-image: url('../images/five.png');
+    }
+    .six {
+      background-image: url('../images/six.png');
+      @media (max-width: 500px) {
+        background-image: url('../images/six2.png');
+      }
     }
   }
 }
+
