@@ -16,27 +16,28 @@
           <span class="menu-line"></span>
           <span class="menu-line"></span>
         </a> -->
-        <a href="/" class="brand">HARRY JUGGINS</a>
+
+        <div href="#projectTitle" id="projectLink"><h3>PROJECTS</h3></div>
+        <a class="brand" id="title">HARRY JUGGINS</a>
+        <div href="#contactTitle" id="contactLink"><h3>CONTACT ME</h3></div>
       </nav>
-      <div class="header">
-        <h1>Web <span id="developer"></span><span id="designer"><div id="designerdiv"></div>designer</span></h1>
+      <div class="header" id="header">
+        <h1>Web <span id="developer"></span><span id="designer"><div id="designerdiv"></div>design</span></h1>
+        <div class="buttonsdiv">
+        </div>
         
         <!-- <p>Here to help you create attractive and engaging modern websites.</p> -->
       </div>
 
-      <div id="side-menu">
-        <a href="#projectTitle" id="projectLink"><h2>PROJECTS</h2></a>
-        <h2>CONTACT ME</h2>
-      </div>
-
-      <div class="projects">
-        <h1 id="projectTitle"><a id="projectTitle"></a>PROJECTS</h1>
-        <div class="project">
+      <h1 id=""><a id="projectTitle"></a>PROJECTS</h1>
+      <div class="projects" id="projects">
+          <div class="project">
           <a href="#">
             <div class="image five">
-              <div class="view-project">
-                <p>VIEW PROJECT</p>
-              </div>
+                <div class="view-project">
+                  <a href=""><p>VIEW PROJECT</p></a>
+                  <a href=""><p>VIEW SOURCE</p></a>
+                </div>
             </div>
           </a>
           <p>Plants Water Reminder App</p>
@@ -46,7 +47,8 @@
             <a href="#">
               <div class="image six">
                 <div class="view-project">
-                  <p>VIEW PROJECT</p>
+                    <a href="https://8billionminds.com/" target="_blank"><p>VIEW PROJECT</p></a>
+                    <a href=""><p>VIEW SOURCE</p></a>
                 </div>
               </div>
             </a>
@@ -57,7 +59,8 @@
           <a href="#">
             <div class="image one">
               <div class="view-project">
-                <p>VIEW PROJECT</p>
+                  <a href=""><p>VIEW PROJECT</p></a>
+                  <a href=""><p>VIEW SOURCE</p></a>
               </div>
             </div>
           </a>
@@ -93,11 +96,14 @@
         </div>
       </div> -->
     </div>
-    <div class="projects">
-        <h1 id="projectTitle"><a id="projectTitle"></a>CONTACT ME</h1>
+    <h1 id=""><a id="contactTitle"></a>CONTACT ME</h1>
+    <div class="contact">
+      <p>Use the contact form below and I’ll get back to you in no time.</p>
       <form>
-        <label>Name</label>
-        <input />
+        <input class="inputSmall" id="name" placeholder="Name" />
+        <input class="inputSmall" id="email" placeholder="Email" />
+        <input class="inputBig" id="message" placeholder="Message" />
+        <input id="submit" type="submit" value="GET IN TOUCH"/>
       </form>
 
     </div>

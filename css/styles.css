@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth; }
+
 body {
   width: 100vw;
   margin: 0;
@@ -14,19 +17,36 @@ body {
   position: fixed; }
 
 .nav {
+  position: fixed;
+  z-index: 9;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 25px;
-  background: none; }
+  padding-top: 5px;
+  background: white;
+  width: 100vw; }
   .nav .brand {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     text-decoration: none;
     color: #13212E;
     font-family: 'Montserrat', sans serif;
     font-size: 1em;
-    font-weight: bold; }
+    font-weight: bold;
+    height: 50px; }
+  .nav div {
+    color: #13212E;
+    padding: 5px;
+    font-family: 'Montserrat';
+    font-size: 0.7em;
+    text-decoration: none;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1); }
+    @media (max-width: 400px) {
+      .nav div {
+        display: none; } }
+  .nav div:hover {
+    text-decoration-color: coral;
+    text-decoration-line: underline; }
   .nav .menu {
     position: absolute;
     left: 25px;
@@ -45,7 +65,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +76,11 @@ body {
   font-size: 1em; }
   .header #designer {
     color: white; }
+    @media (max-width: 450px) {
+      .header #designer {
+        display: block; } }
+  .header .buttonsdiv {
+    display: flex; }
 
 #designerdiv {
   width: 1px;
@@ -67,7 +92,7 @@ body {
   top: 12px; }
 
 .divanimate1 {
-  transform: scaleX(160); }
+  transform: scaleX(120); }
 
 .divanimate2 {
   transform: scaleX(0); }
@@ -90,8 +115,11 @@ body {
   padding-top: 100px; }
 
 .projects {
-  padding: 25px;
+  padding: 0 25px;
   cursor: pointer; }
+  @media (min-width: 800px) {
+    .projects {
+      display: flex; } }
   .projects a {
     z-index: 9;
     text-decoration: none;
@@ -99,7 +127,7 @@ body {
     .projects a h1 {
       width: 155px;
       color: #13212E;
-      font-size: 2em;
+      font-size: 26px;
       font-family: 'Cinzel', sans-serif;
       overflow: hidden; }
     .projects a h1::before {
@@ -113,36 +141,44 @@ body {
       width: 155px;
       position: absolute; }
   .projects .project {
-    margin: 0 auto 60px;
+    margin: auto;
+    padding: 10px;
     width: 80vw;
     height: 70vh;
-    padding: 10px; }
+    margin-bottom: 65px;
+    scroll-snap-stop: always; }
+    @media (min-width: 800px) {
+      .projects .project {
+        width: 45vw; } }
     .projects .project .image {
       height: 85%;
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
       display: flex;
-      align-items: flex-end; }
+      align-items: flex-end;
+      overflow: hidden; }
       .projects .project .image .view-project {
-        height: 43px;
-        width: 155px;
+        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FA7921;
+        flex-direction: column;
+        background: #13212E;
         color: white;
         font-size: xx-small;
-        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        top: 5px;
-        left: -5px;
-        transform: scale(0);
-        transform-origin: bottom left; }
-        .projects .project .image .view-project p {
-          font-size: 16px; }
+        transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-100%);
+        transform-origin: left;
+        opacity: 0.95; }
+        .projects .project .image .view-project a {
+          text-decoration: none;
+          color: white; }
+          .projects .project .image .view-project a p {
+            font-size: 16px; }
     .projects .project .image:hover > .view-project {
-      transform: scale(1); }
+      transform: translateX(0); }
     .projects .project p:nth-child(3) {
       color: #6a737b; }
     .projects .project .one {
@@ -160,3 +196,30 @@ body {
       @media (max-width: 500px) {
         .projects .project .six {
           background-image: url("../images/six2.png"); } }
+
+.contact {
+  width: 80vw;
+  height: 170vh;
+  padding: 10px;
+  margin: auto;
+  text-align: center; }
+
+form {
+  margin: auto;
+  width: 95%; }
+  form input {
+    border: none;
+    border-bottom: 1px solid #13212E;
+    margin: 35px;
+    font-size: 16px;
+    height: 45px; }
+  form .inputSmall {
+    width: 30%; }
+    @media (max-width: 500px) {
+      form .inputSmall {
+        width: calc(60% + 70px); } }
+  form .inputBig {
+    width: calc(60% + 70px); }
+  form #submit {
+    display: block;
+    margin: auto; }

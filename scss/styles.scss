@@ -4,6 +4,10 @@ $fade: #6a737b;
 $orange: #FA7921;
 $small: 640px;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   margin: 0;
@@ -27,19 +31,38 @@ body {
 }
 
 .nav {
+  position: fixed;
+  z-index: 9;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 25px;
-  background: none;
+  padding-top: 5px;
+  background: white;
+  width: 100vw;
   .brand {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     text-decoration: none;
     color: $blue;
     font-family: 'Montserrat', sans serif;
     font-size: 1em;
     font-weight: bold;
+    height: 50px;
+  }
+  div {
+    color: $blue;
+    padding: 5px;
+    font-family: 'Montserrat';
+    font-size: 0.7em;
+    text-decoration: none;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+  div:hover {
+    text-decoration-color: coral;
+    text-decoration-line: underline;
   }
   .menu {
     position: absolute;
@@ -63,7 +86,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +97,13 @@ body {
   font-size: 1em;
   #designer {
     color: white;
+    @media (max-width: 450px) {
+      display: block;
+    }
+  }
+  .buttonsdiv {
+    display: flex;
+    
   }
 }
 
@@ -88,7 +118,7 @@ body {
 }
 
 .divanimate1 {
-  transform: scaleX(160);
+  transform: scaleX(120);
 }
 
 .divanimate2 {
@@ -115,8 +145,11 @@ body {
 
 
 .projects {
-  padding: 25px;
+  padding: 0 25px;
   cursor: pointer;
+  @media (min-width: 800px) {
+    display: flex;
+  }
   a {
     z-index: 9;
     text-decoration: none;
@@ -124,7 +157,7 @@ body {
     h1 {
       width: 155px;
       color: $blue;
-      font-size: 2em;
+      font-size: 26px;
       font-family: 'Cinzel', sans-serif;
       overflow: hidden;
     }
@@ -142,10 +175,15 @@ body {
     }
   }
   .project {
-    margin: 0 auto 60px;
+    margin: auto;
+    padding: 10px;
     width: 80vw;
     height: 70vh;
-    padding: 10px;
+    margin-bottom: 65px;
+    scroll-snap-stop: always;
+    @media (min-width: 800px) {
+      width: 45vw;
+    }
     .image {
       height: 85%;
       background-size: cover;
@@ -153,29 +191,33 @@ body {
       background-repeat: no-repeat;
       display: flex;
       align-items: flex-end;
+      overflow: hidden;
       .view-project {
-        height: 43px;
-        width: 155px;
+        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: $orange;
+        flex-direction: column;
+        background: $blue;
         color:white;
         font-size: xx-small;
         // color: #ffffff00;
-        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        top: 5px;
-        left: -5px;
-        transform: scale(0);
-        transform-origin: bottom left;
-        p {
-          font-size: 16px;
+        transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-100%);
+        transform-origin: left;
+        opacity: 0.95;
+        a {
+          text-decoration: none;
+          color: white;
+          p {
+            font-size: 16px;
+          }
         }
       }
     }
     .image:hover > .view-project {
-      transform: scale(1);
+      transform: translateX(0);
     }
     p:nth-child(3) {
       color: $fade;
@@ -204,3 +246,37 @@ body {
   }
 }
 
+.contact {
+  width: 80vw;
+  height: 170vh;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  p {
+  }
+}
+
+form {
+  margin: auto;
+  width: 95%;
+  input {
+    border: none;
+    border-bottom: 1px solid $blue;
+    margin: 35px;
+    font-size: 16px;
+    height: 45px;
+  }
+  .inputSmall {
+    width: 30%;
+    @media (max-width: 500px) {
+      width: calc(60% + 70px);
+    }
+  }
+  .inputBig {
+    width: calc(60% + 70px);
+  }
+  #submit {
+    display: block;
+    margin: auto;
+  }
+}
