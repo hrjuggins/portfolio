@@ -219,7 +219,7 @@ body {
     .image:hover > .view-project {
       transform: translateX(0);
     }
-    p:nth-child(3) {
+    p:nth-child(4) {
       color: $fade;
     }
     .one {
@@ -245,7 +245,6 @@ body {
     }
   }
 }
-
 .contact {
   width: 80vw;
   height: 170vh;
@@ -278,5 +277,8 @@ form {
   #submit {
     display: block;
     margin: auto;
+    border-bottom: none;
+    background: #FA7921;
+    color: white;
   }
 }

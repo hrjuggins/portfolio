@@ -179,7 +179,7 @@ body {
             font-size: 16px; }
     .projects .project .image:hover > .view-project {
       transform: translateX(0); }
-    .projects .project p:nth-child(3) {
+    .projects .project p:nth-child(4) {
       color: #6a737b; }
     .projects .project .one {
       background-image: url("../images/one.png"); }
@@ -222,4 +222,7 @@ form {
     width: calc(60% + 70px); }
   form #submit {
     display: block;
-    margin: auto; }
+    margin: auto;
+    border-bottom: none;
+    background: #FA7921;
+    color: white; }
