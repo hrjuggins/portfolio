@@ -33,15 +33,24 @@ body {
 .nav {
   position: fixed;
   z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 5px;
   background: white;
   width: 100vw;
   .brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-decoration: none;
     color: $blue;
     font-family: 'Montserrat', sans serif;
@@ -55,22 +64,33 @@ body {
     font-family: 'Montserrat';
     font-size: 0.7em;
     text-decoration: none;
+    -webkit-transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     @media (max-width: 400px) {
       display: none;
     }
   }
   div:hover {
-    text-decoration-color: coral;
-    text-decoration-line: underline;
+    -webkit-text-decoration-color: coral;
+            text-decoration-color: coral;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
   }
   .menu {
     position: absolute;
     left: 25px;
     top: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     span {
       width: 25px;
       background: $fade;
@@ -87,11 +107,20 @@ body {
 .header {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: 'Cinzel', sans-serif;
   color: $blue;
   font-size: 1em;
@@ -102,6 +131,8 @@ body {
     }
   }
   .buttonsdiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
   }
@@ -112,19 +143,27 @@ body {
   height: 35px;
   background: $orange;
   position: relative;
-  transform-origin: left;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
   display: inline-block;
   top: 12px;
 }
 
 .divanimate1 {
-  transform: scaleX(120);
+  -webkit-transform: scaleX(120);
+      -ms-transform: scaleX(120);
+          transform: scaleX(120);
 }
 
 .divanimate2 {
-  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
 }
 .divanimate3 {
+  -webkit-transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -136,9 +175,16 @@ body {
   top: 0;
   left: 0;
   z-index: -2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   padding-top: 100px;
 }
@@ -148,6 +194,8 @@ body {
   padding: 0 25px;
   cursor: pointer;
   @media (min-width: 800px) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   a {
@@ -166,6 +214,8 @@ body {
       height: 5px;
       width: 0;
       bottom: 40px;
+      -webkit-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      -o-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background: $orange;
     }
@@ -189,23 +239,42 @@ body {
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: flex-end;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
       overflow: hidden;
       .view-project {
         height: 100%;
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         background: $blue;
         color:white;
         font-size: xx-small;
         // color: #ffffff00;
+        -webkit-transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
         transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateX(-100%);
-        transform-origin: left;
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+        -webkit-transform-origin: left;
+            -ms-transform-origin: left;
+                transform-origin: left;
         opacity: 0.95;
         a {
           text-decoration: none;
@@ -217,7 +286,9 @@ body {
       }
     }
     .image:hover > .view-project {
-      transform: translateX(0);
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
     }
     p:nth-child(4) {
       color: $fade;
@@ -259,10 +330,13 @@ body {
 form {
   // margin: auto;
   width: 100%;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 120px 120px 50px;
   grid-template-rows: 120px 120px 50px;
   text-align: left;
   @media (min-width: 500px) {
+    display: -ms-grid;
     display: grid;
   }
   input {
@@ -273,7 +347,9 @@ form {
     height: 45px;
   }
   .inputSmall {
-    grid-row-start: 1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-row-span: 1;
     grid-row-end: 2;
     width: calc(100% - 70px);
     @media (max-width: 500px) {
@@ -281,38 +357,55 @@ form {
     }
   }
   .inputSmall:nth-child(1) {
-    grid-column-start: 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 1;
     grid-column-end: 2;
   }
   .inputSmall:nth-child(2) {
-    grid-column-start: 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 1;
     grid-column-end: 2;
   }
   .inputSmall:nth-child(3) {
-    grid-column-start: 2;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -ms-grid-column-span: 1;
     grid-column-end: 3;
   }
   .inputSmall:nth-child(4) {
-    grid-column-start: 2;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -ms-grid-column-span: 1;
     grid-column-end: 3;
   }
   .inputBig {
-    grid-row-start: 2;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-row-span: 1;
     grid-row-end: 3;
-    grid-column-start: 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 2;
     grid-column-end: 3;
     width: calc(100% - 70px);
   }
   #submit {
-    grid-row-start: 3;
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    -ms-grid-row-span: 1;
     grid-row-end: 4;
-    grid-column-start: 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 2;
     grid-column-end: 3;
     border-bottom: none;
     background: #FA7921;
     color: white;
     width: 140px;
     margin: auto;
+    display: block;
   }
   label {
     position: relative;
@@ -320,6 +413,24 @@ form {
     left: 35px;
 
   }
+}
+
+form > *:nth-child(1) {-ms-grid-row:    1;-ms-grid-column:    1
+}
+
+form > *:nth-child(2) {-ms-grid-row:    1;-ms-grid-column:    2
+}
+
+form > *:nth-child(3) {-ms-grid-row:    2;-ms-grid-column:    1
+}
+
+form > *:nth-child(4) {-ms-grid-row:    2;-ms-grid-column:    2
+}
+
+form > *:nth-child(5) {-ms-grid-row:    3;-ms-grid-column:    1
+}
+
+form > *:nth-child(6) {-ms-grid-row:    3;-ms-grid-column:    2
 }
 .labelFocus {
   top: 20px;
