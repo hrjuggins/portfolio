@@ -252,12 +252,19 @@ body {
   margin: auto;
   text-align: center;
   p {
+    margin-bottom: 35px;
   }
 }
 
 form {
-  margin: auto;
-  width: 95%;
+  // margin: auto;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 120px 50px;
+  text-align: left;
+  @media (min-width: 500px) {
+    display: grid;
+  }
   input {
     border: none;
     border-bottom: 1px solid $blue;
@@ -266,31 +273,54 @@ form {
     height: 45px;
   }
   .inputSmall {
-    width: 30%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: calc(100% - 70px);
     @media (max-width: 500px) {
-      width: calc(60% + 70px);
+      width: calc(100% - 70px);
     }
   }
+  .inputSmall:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .inputSmall:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .inputSmall:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .inputSmall:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
   .inputBig {
-    width: calc(60% + 140px);
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: calc(100% - 70px);
   }
   #submit {
-    display: block;
-    margin: auto;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
     border-bottom: none;
     background: #FA7921;
     color: white;
+    width: 140px;
+    margin: auto;
   }
   label {
     position: relative;
-    top: 0px;
-    left: 88px;
-  }
-  label:last-of-type {
-    position: relative;
-    left: 110px;
+    top: 60px;
+    left: 35px;
+
   }
 }
 .labelFocus {
-  top: -25px;
+  top: 20px;
 }

@@ -203,10 +203,17 @@ body {
   padding: 10px;
   margin: auto;
   text-align: center; }
+  .contact p {
+    margin-bottom: 35px; }
 
 form {
-  margin: auto;
-  width: 95%; }
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 120px 50px;
+  text-align: left; }
+  @media (min-width: 500px) {
+    form {
+      display: grid; } }
   form input {
     border: none;
     border-bottom: 1px solid #13212E;
@@ -214,25 +221,44 @@ form {
     font-size: 16px;
     height: 45px; }
   form .inputSmall {
-    width: 30%; }
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: calc(100% - 70px); }
     @media (max-width: 500px) {
       form .inputSmall {
-        width: calc(60% + 70px); } }
+        width: calc(100% - 70px); } }
+  form .inputSmall:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 2; }
+  form .inputSmall:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2; }
+  form .inputSmall:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3; }
+  form .inputSmall:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 3; }
   form .inputBig {
-    width: calc(60% + 140px); }
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: calc(100% - 70px); }
   form #submit {
-    display: block;
-    margin: auto;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
     border-bottom: none;
     background: #FA7921;
-    color: white; }
+    color: white;
+    width: 140px;
+    margin: auto; }
   form label {
     position: relative;
-    top: 0px;
-    left: 88px; }
-  form label:last-of-type {
-    position: relative;
-    left: 110px; }
+    top: 60px;
+    left: 35px; }
 
 .labelFocus {
-  top: -25px; }
+  top: 20px; }
