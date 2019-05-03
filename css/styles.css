@@ -219,10 +219,20 @@ form {
       form .inputSmall {
         width: calc(60% + 70px); } }
   form .inputBig {
-    width: calc(60% + 70px); }
+    width: calc(60% + 140px); }
   form #submit {
     display: block;
     margin: auto;
     border-bottom: none;
     background: #FA7921;
     color: white; }
+  form label {
+    position: relative;
+    top: 0px;
+    left: 88px; }
+  form label:last-of-type {
+    position: relative;
+    left: 110px; }
+
+.labelFocus {
+  top: -25px; }

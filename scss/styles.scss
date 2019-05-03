@@ -272,7 +272,7 @@ form {
     }
   }
   .inputBig {
-    width: calc(60% + 70px);
+    width: calc(60% + 140px);
   }
   #submit {
     display: block;
@@ -281,4 +281,16 @@ form {
     background: #FA7921;
     color: white;
   }
+  label {
+    position: relative;
+    top: 0px;
+    left: 88px;
+  }
+  label:last-of-type {
+    position: relative;
+    left: 110px;
+  }
+}
+.labelFocus {
+  top: -25px;
 }

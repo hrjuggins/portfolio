@@ -5,7 +5,11 @@ let contactLink = document.getElementById('contactLink');
 let contact = document.getElementById('contact');
 let menu = document.getElementById('menu');
 let container = document.getElementById('container');
+let formInputs = document.querySelectorAll('.formInput');
+let labels = document.querySelectorAll('label');
 
+//////////////////////////////
+// Scrolling animations
 
 projectLink.onclick = function() {
   scrollto(projectTitle.offsetTop-90);
@@ -20,42 +24,6 @@ title.onclick = function() {
 let scrollto = function(element) {
   window.scrollTo({ top: element, behavior: 'smooth' })
 };
-
-// window.onscroll = function(e) {
-//   // print "false" if direction is down and "true" if up
-//   let projects = document.getElementsByClassName('project')
-//   if (window.outerWidth <= 800) {
-//     if (this.oldScroll > this.scrollY) {
-//     } else {
-//       for ( i = 0; i < projects.length; i++ ) {
-//         if( this.scrollY < projects[i].offsetTop + projects[i].offsetHeight ) {
-//           console.log(`window has passed project ${i}`);
-//           scrollto(projects[i+1].offsetTop-70)
-//         }
-//       }
-//     }
-//   }
-//   this.oldScroll = this.scrollY;
-// }
-
-// window.onscroll = function() {
-//   let oldScroll = this.scrollY
-//   let windowPos = this.scrollY
-//   let projects = document.getElementsByClassName('project')
-//     for ( i = 0; i < projects.length; i++ ) {
-//       // console.log(projects[i].offsetTop)
-//       if( windowPos > projects[i].offsetTop && windowPos < projects[i].offsetTop + 200) {
-//         console.log(`window has passed project ${i}`);
-//         scrollto(projects[i+1].offsetTop)
-//       }
-//     }
-  
-// }
-
-// menu.onclick = function() {
-//   container.classList.toggle("left")
-//   document.body.classList.toggle("fixed");
-// }
 
 
 //////////////////////////////
@@ -95,4 +63,33 @@ setTimeout(myFunc1, 2200);
 setTimeout(myFunc2, 3500);
 setTimeout(myFunc3, 3550);
 
+
 //////////////////////////////
+// Input field animations
+
+var labelFunc = function (id, action) {
+  labels.forEach(function(elem) {
+    if (elem.htmlFor == id && action == "add") {
+      elem.classList.add('labelFocus');
+    } else if (elem.htmlFor == id && action == "remove") {
+      elem.classList.remove('labelFocus');
+    }
+  }) 
+}
+
+
+formInputs.forEach(function(elem) {
+  elem.onfocus = function() {
+    labelFunc(elem.id, "add")
+  }
+  elem.onblur = function() {
+    if (!elem.value) {
+      labelFunc(elem.id, "remove")
+    }
+  }
+})
+
+
+
+
+
